@@ -1,19 +1,4 @@
-var gruntModules = require('grunt-modules');
-module.exports = function(grunt) {
-
-  grunt.initConfig({
-    lint: {
-      files: ['Asynchronous.js']
-      
-	  }
-});
-   grunt.registerTask('default','lint');
-   grunt.registerTask('Travis','lint');
-  };
-  
-  
-  
- module.exports = function(grunt){
+  module.exports = function(grunt){
 
   grunt.initConfig({
     protractor: {
