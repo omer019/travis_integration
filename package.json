@@ -15,7 +15,7 @@
   "bugs": {
     "url": "https://github.com/omer019/travis_integration/travis_ci"
   },
-  "main": "grunt.js",
+  "main": "Gruntfile.js",
   "engines": {
     "node": ">= 4.2.0"
   },
@@ -30,6 +30,7 @@
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-contrib-clean": "^1.0.0",
+	"grunt-protractor-runner": "~1.0.0",
     "grunt-contrib-jshint": "^1.0.0",
     "grunt-contrib-nodeunit": "^0.4.1",
     "grunt-contrib-watch": "^0.6.1"
