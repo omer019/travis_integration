@@ -1,6 +1,5 @@
 language: node_js
 node_js:
-  - "4.2"
   - "0.12"
 before_script:
   - "export DISPLAY=:99.0"
@@ -9,9 +8,6 @@ before_script:
   - 'node_modules/protractor/bin/webdriver-manager start 2>&1 &'  
   - sleep 3
   - 'bower install'
-  - 'npm install nvm'
-  - 'npm install'
-  - 'npm install eval'
   - 'npm install grunt'
   - 'npm install grunt-cli'
   - 'npm install grunt-protractor-webdriver'

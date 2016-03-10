@@ -4,7 +4,7 @@
     protractor: {
       options: {
         // Location of your protractor config file
-        configFile: "F:\Gitrepo\Vizabi_Web_Conf_Local.js",
+        configFile: "Vizabi_Web_Conf_Local.js",
 
         // Do you want the output to use fun colors?
         noColor: false,
