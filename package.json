@@ -21,7 +21,7 @@
   },
   "scripts": {
         
-		"test": "grunt Gruntfile --verbose "
+		"test": "grunt travis_integration --verbose "
   },
   "dependencies": {
     "protractor": "^3.1.1",
