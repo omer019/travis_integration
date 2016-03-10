@@ -15,12 +15,12 @@
   "bugs": {
     "url": "https://github.com/teerapap/grunt-protractor-runner/issues"
   },
-  "main": "Grunt.js",
+  "main": "grunt.js",
   "engines": {
     "node": ">= 4.2.0"
   },
   "scripts": {
-    "test": "grunt grunt"
+    "test": "grunt.js"
   },
   "dependencies": {
     "protractor": "^3.1.1",
