@@ -2,7 +2,7 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
     lint: {
-      files: ['Vizabi_Web_conf_Local.js']
+      files: ['Asynchronous.js']
     }
   });
 
