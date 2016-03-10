@@ -20,7 +20,7 @@
     "node": ">= 4.2.0"
   },
   "scripts": {
-        "test": "grunt  "
+        "test": "grunt travis_integration "
   },
   "dependencies": {
     "protractor": "^3.1.1",
