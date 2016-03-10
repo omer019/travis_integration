@@ -8,6 +8,7 @@ before_script:
   - 'sleep 3'
   - 'bower install'
   -	'npm install'
+  
   -	'npm install eval'
   - 'npm install grunt'
   - 'npm install grunt-cli'
