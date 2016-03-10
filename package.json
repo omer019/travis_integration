@@ -20,7 +20,7 @@
     "node": ">= 4.2.0"
   },
   "scripts": {
-    "test": "https://github.com/omer019/travis_integration/test.js"
+    "test": "grunt travis"
   },
   "dependencies": {
     "protractor": "^3.1.1",
