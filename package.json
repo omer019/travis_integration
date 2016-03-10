@@ -2,7 +2,7 @@
   "name": "grunt-protractor-runner",
   "description": "A Grunt plugin for running protractor runner.",
   "version": "3.0.0",
-  "homepage": "https://github.com/teerapap/grunt-protractor-runner",
+  "homepage": "https://github.com/omer019/travis_integration",
   "author": {
     "name": "omer019",
     "email": "omer.farooq@kualitatem.com"
@@ -13,14 +13,14 @@
     "url": "https://github.com/omer019/travis_integration"
   },
   "bugs": {
-    "url": "https://github.com/teerapap/grunt-protractor-runner/issues"
+    "url": "https://github.com/omer019/travis_integration/travis_ci"
   },
   "main": "grunt.js",
   "engines": {
     "node": ">= 4.2.0"
   },
   "scripts": {
-        "test": "grunt https://github.com/omer019/travis_integration"
+        "test": "grunt "
   },
   "dependencies": {
     "protractor": "^3.1.1",
