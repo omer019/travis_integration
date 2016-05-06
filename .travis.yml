@@ -9,7 +9,7 @@ before_script:
   - sleep 3
   - 'npm install bower'
   - 'npm install -g grunt'
-  - 'npm install grunt-cli'
+  - 'npm install grunt-cli -g'
   - 'npm install grunt-protractor-webdriver'
   - 'npm install grunt-protractor-runner'
   - 'npm install grunt-express-server'  
