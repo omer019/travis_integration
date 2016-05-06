@@ -1,67 +1,82 @@
- module.exports = function(grunt){
 
+
+'use strict';
+
+module.exports = function(grunt) {
+
+  // Project configuration.
   grunt.initConfig({
+    jshint: {
+      all: [
+        'Gruntfile.js',
+        'tasks/*.js',
+        '<%= nodeunit.tests %>',
+      ],
+      options: {
+        jshintrc: '.jshintrc',
+      },
+    },
+
+    // Before generating any new files, remove any previously-created files.
+    clean: {
+      tests: ['tmp'],
+    },
+
+    // Configuration to be run (and then tested).
     protractor: {
       options: {
-        // Location of your protractor config file
-       
-	   configFile: "Vizabi_Web_Conf_Local.js",
-
-        // Do you want the output to use fun colors?
-        noColor: false,
-
-        // Set to true if you would like to use the Protractor command line debugging tool
-        // debug: true,
-
-        // Additional arguments that are passed to the webdriver command
-        args: { }
+        keepAlive: false
       },
-      e2e: {
+      testTargetConfigFile: {
+        configFile:"test/testConf.js",
         options: {
-          // Stops Grunt process if a test fails
-          keepAlive: false
+          webdriverManagerUpdate: true
         }
       },
-      continuous: {
+      testKeepAliveOnFailedTest: {
+        configFile:"test/testConf.js",
         options: {
-          keepAlive: true
+          keepAlive: true,
+          args: {
+            specs:["test/failedTest.js"],
+          }
         }
-      }
+      },
+      testArgs: {
+        configFile:"test/testConf.js",
+        options: {
+          args: {
+            params: {
+              number: 1,
+              bool_true: true,
+              bool_false: false,
+              str: "string",
+              nil: null, // Null is not supported.
+              obj: {
+                array: [1, 2, 3],
+                undef: undefined
+              }
+            },
+            capabilities: {
+              'browserName': 'chrome'
+            },
+            rootElement:"body",
+            specs:["test/argsTest.js"],
+            verbose:true
+          }
+        }
+      },
     },
 
-    express: {
-      options: {
-        // Override defaults here
-      },
-      dev: {
-        options: {
-          script: 'bin/www'
-        }
-      },
-      prod: {
-        options: {
-          script: 'path/to/prod/server.js',
-          node_env: 'production'
-        }
-      },
-      test: {
-        options: {
-          script: 'server.js'
-        }
-      }
-    },
-
-    protractor_webdriver: {
-      options: {
-        // Task-specific options go here. 
-      },
-      your_target: {
-        // Target-specific file lists and/or options go here. 
-      },
+    // Unit tests.
+    nodeunit: {
+      tests: ['test/*_test.js'],
     },
 
   });
-   grunt.loadTasks('Vizabi_Web_Conf_Local.js');
+
+  // Actually load this plugin's task(s).
+  grunt.loadTasks('tasks');
 
   // These plugins provide necessary tasks.
   grunt.loadNpmTasks('grunt-contrib-jshint');
@@ -70,10 +85,9 @@
 
   // Whenever the "test" task is run, first clean the "tmp" dir, then run this
   // plugin's task(s), then test the result.
-  grunt.registerTask('Vizabi_Web_Conf_Local.js', ['clean', 'protractor', 'nodeunit']);
+  grunt.registerTask('test', ['clean', 'protractor', 'nodeunit']);
 
   // By default, lint and run all tests.
-  //grunt.registerTask('default', ['jshint', 'test']);
+  grunt.registerTask('default', ['jshint', 'test']);
 
 };
-**************************
