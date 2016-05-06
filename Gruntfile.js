@@ -85,18 +85,22 @@
 module.exports = function(grunt) {
 
   // Project configuration.
-  grunt.initConfig({
-    jshint: {
-      all: [
-        'Gruntfile.js',
-        'tasks/*.js',
-        '<%= nodeunit.tests %>',
-      ],
+ grunt.initConfig({
+    protractor: {
       options: {
-        jshintrc: '.jshintrc',
-      },
-    },
+        // Location of your protractor config file
+       
+	   configFile: "Vizabi_Web_Conf_Local.js",
 
+        // Do you want the output to use fun colors?
+        noColor: false,
+
+        // Set to true if you would like to use the Protractor command line debugging tool
+        // debug: true,
+
+        // Additional arguments that are passed to the webdriver command
+        args: { }
+      },
     // Before generating any new files, remove any previously-created files.
     clean: {
       tests: ['tmp'],
