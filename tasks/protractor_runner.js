@@ -6,7 +6,7 @@
  * Licensed under the MIT license.
  */
 
-'use strict';
+
 
 var util = require('util');
 var path = require('path');
